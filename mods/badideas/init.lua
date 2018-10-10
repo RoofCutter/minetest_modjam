@@ -5,19 +5,19 @@ local default_path = minetest.get_modpath("badideas")
 dofile(default_path .. "/projectile_collision.lua")
 
 -- Cactus Snowball
-minetest.register_tool("badideas:cactus_snowball", {
+minetest.register_craftitem("badideas:cactus_snowball", {
     description = "Cactus Snowball",
     inventory_image = "badideas_cactus_snowball.png",
     on_use = function(itemstack, user, pointed_thing)
         local position = user:get_pos()
-        position["y"] = position["y"] + 1.5
+        position["y"] = position["y"] + 2
         local projectile = minetest.add_entity(position, "badideas:cactus_snowball_entity")
         if projectile then 
             -- Horizontal constant velocity
             projectile:setvelocity({
-                x = math.sin(user:get_look_horizontal()) * math.cos(user:get_look_vertical()) * -10,
-                y = math.sin(user:get_look_vertical()) * -10,
-                z = math.cos(user:get_look_horizontal()) * math.cos(user:get_look_vertical()) * 10,
+                x = math.sin(user:get_look_horizontal()) * math.cos(user:get_look_vertical()) * -25,
+                y = math.sin(user:get_look_vertical()) * -25,
+                z = math.cos(user:get_look_horizontal()) * math.cos(user:get_look_vertical()) * 25,
             })
             -- Vertical acceleration due to gravity
             projectile:setacceleration({
