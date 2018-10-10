@@ -16,9 +16,9 @@ minetest.register_tool("badideas:cactus_snowball", {
         if projectile then 
             -- Horizontal constant velocity
             projectile:setvelocity({
-                x = math.sin(user:get_look_horizontal()) * -1,
+                x = math.sin(user:get_look_horizontal()) * -10,
                 y = 0,
-                z = math.cos(user:get_look_horizontal()),
+                z = math.cos(user:get_look_horizontal()) * 10,
             })
             -- Vertical acceleration due to gravity
             projectile:setacceleration({
