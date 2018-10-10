@@ -30,6 +30,14 @@ minetest.register_craftitem("badideas:cactus_snowball", {
         return itemstack
     end
 })
+minetest.register_craft({
+    type = "shapeless",
+    output = "badideas:cactus_snowball",
+    recipe = {
+        "default:snow",
+        "default:cactus",
+    },
+})
 minetest.register_entity("badideas:cactus_snowball_entity", {
     initial_properties = {
         hp_max=100,
