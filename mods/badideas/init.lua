@@ -24,7 +24,7 @@ minetest.register_tool("badideas:cactus_snowball", {
 minetest.register_entity("badideas:cactus_snowball_entity", {
     initial_properties = {
         physical = true,
-        collide_with_objects = true,
+        collide_with_objects = false, -- Collide with the ground, but not other entities
         pointable = false,
         visual = "sprite",
         textures = {"badideas_cactus_snowball.png"},
