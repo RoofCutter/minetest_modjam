@@ -10,14 +10,13 @@ minetest.register_tool("badideas:cactus_snowball", {
     inventory_image = "badideas_cactus_snowball.png",
     on_use = function(itemstack, user, pointed_thing)
         local position = user:get_pos()
-        -- FIXME: Make the snowball appear at eye level
-        --position["y"] = position["y"] + 2
+        position["y"] = position["y"] + 1.5
         local projectile = minetest.add_entity(position, "badideas:cactus_snowball_entity")
         if projectile then 
             -- Horizontal constant velocity
             projectile:setvelocity({
                 x = math.sin(user:get_look_horizontal()) * -10,
-                y = 0,
+                y = 0, -- FIXME: Make vertical look angle affect initial vertical velocity
                 z = math.cos(user:get_look_horizontal()) * 10,
             })
             -- Vertical acceleration due to gravity
@@ -33,7 +32,7 @@ minetest.register_tool("badideas:cactus_snowball", {
 })
 minetest.register_entity("badideas:cactus_snowball_entity", {
     initial_properties = {
-        max_health=100,
+        hp_max=100,
         physical = true,
         collide_with_objects = false, -- Collide with the ground, but not other entities
         pointable = false,
