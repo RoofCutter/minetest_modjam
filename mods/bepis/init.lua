@@ -3,13 +3,14 @@ minetest.register_craftitem("bepis:crude_bepis", {
 	inventory_image = "crude_bepis.png",
 	stack_max = 1,
 	description = "Crude Bepis",
-	on_use = minetest.item_eat(3),
+	on_use = minetest.item_eat(3, "bucket:bucket_empty"),
 })
 minetest.register_craftitem("bepis:refined_bepis", {
 	wield_image = "refined_bepis.png",
 	inventory_image = "refined_bepis.png",
 	description = "Refined Bepis",
-	on_use = minetest.item_eat(8),
+	on_use = minetest.item_eat(8, "bucket:bucket_empty"),
+	stack_max = 6,
 })
 minetest.register_craft({
 	output = '"bepis:crude_bepis" 1',
