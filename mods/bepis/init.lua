@@ -55,9 +55,7 @@ minetest.register_node("bepis:bepis_block", {
 	tiles = {"bepis_block.png"},
 	groups = {cracky = 1},
 	on_rightclick = function(pos)
-		 minetest.sound_play("despacito", {
-		pos = {x=0, y=0, z=0},
-	})
+		 minetest.sound_play("despacito", pos)
 	end,
 })
 minetest.register_craft({
