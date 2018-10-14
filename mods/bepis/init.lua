@@ -36,3 +36,36 @@ minetest.register_craft({
 	recipe = "bepis:refined_bepis",
 	burntime = 14,
 })
+minetest.register_craftitem("bepis:bepis_ingot", {
+	wield_image = "bepis_ingot.png",
+	inventory_image= "bepis_ingot.png",
+	stack_max = 99,
+	description = "Bepis Ingot",
+})
+minetest.register_craft({
+	type = "cooking",
+	output = "bepis:bepis_ingot",
+	recipe = "bepis:refined_bepis",
+	cooktime = 7,
+})
+minetest.register_node("bepis:bepis_block", {
+	description = "Bepis Block",
+	tiles = {"bepis_block.png"},
+	groups = {cracky = 1},
+})
+minetest.register_craft({
+	output = '"bepis:bepis_block" 1',
+	recipe = {
+		{'bepis:bepis_ingot', 'bepis:bepis_ingot', 'bepis:bepis_ingot'},
+		{'bepis:bepis_ingot', 'bepis:bepis_ingot', 'bepis:bepis_ingot'},
+		{'bepis:bepis_ingot', 'bepis:bepis_ingot', 'bepis:bepis_ingot'},
+	}
+})
+minetest.register_craft({
+	output = '"bepis:bepis_ingot" 9',
+	recipe = {
+		{'bepis:bepis_block', '', ''},
+		{'', '', ''},
+		{'', '', ''},
+	}
+})
