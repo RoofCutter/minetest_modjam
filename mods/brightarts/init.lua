@@ -1,3 +1,7 @@
+-- Load files
+local default_path = minetest.get_modpath("brightarts")
+dofile(default_path .. "/mana/beefsteak.lua")
+
 minetest.register_craftitem("brightarts:help", {
 	wield_image = "battery.pngte",
   inventory_image = "battery.png",
